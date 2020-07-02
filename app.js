@@ -9,10 +9,61 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const Choices = require("inquirer/lib/objects/choices");
 
+let looper = true;
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+
+
+  inquirer
+    .prompt([
+      {
+        type: "expand",
+        name: "init",
+        message: "What is the role of the person? Type H for all the list",
+        choices: [
+          {
+            key: "A",
+            value: "Manager",
+          },
+          {
+            key: "B",
+            value: "Engineer",
+          },
+          {
+            key: "C",
+            value: "Intern",
+          },
+          {
+            key: "D",
+            value: "exit",
+          },
+        ],
+      },
+    ])
+    .then((answer) => {
+      console.log(answer.init);
+
+      switch (answer.init) {
+        case "Manager":
+          console.log(" You chose Manager");
+          break;
+
+        case "Employee":
+          console.log(" You chose Employee");
+          break;
+
+        case "Intern":
+          console.log(" You chose Intern");
+          break;
+
+        default:
+          console.log("Exiting out!");
+          break;
+      }
+    });
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
