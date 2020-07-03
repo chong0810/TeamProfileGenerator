@@ -50,4 +50,4 @@ If you have any questions about the repo, open an issue or contact chong0810 dir
 
 <img src="assets/images/EmployeeSummaryPic.JPG" width="70%" alt="Employee Summary Pic" >
 
-https://chong0810.github.io/EmployeeSummary/
+ https://chong0810.github.io/TeamProfileGenerator/
